@@ -1,0 +1,272 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --card: #111111;
+  --card-foreground: #e5e5e5;
+  --popover: #111111;
+  --popover-foreground: #e5e5e5;
+  --primary: #00d9ff;
+  --primary-foreground: #0a0a0a;
+  --secondary: #10b981;
+  --secondary-foreground: #0a0a0a;
+  --muted: #333333;
+  --muted-foreground: #888888;
+  --accent: #00d9ff;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ff6b35;
+  --destructive-foreground: #0a0a0a;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #00d9ff;
+  --chart-1: #00d9ff;
+  --chart-2: #10b981;
+  --chart-3: #fbbf24;
+  --chart-4: #8b5cf6;
+  --chart-5: #ec4899;
+  --radius: 0.5rem;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #00d9ff;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #10b981;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #1a1a1a;
+  --sidebar-ring: #00d9ff;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --card: #111111;
+  --card-foreground: #e5e5e5;
+  --popover: #111111;
+  --popover-foreground: #e5e5e5;
+  --primary: #00d9ff;
+  --primary-foreground: #0a0a0a;
+  --secondary: #10b981;
+  --secondary-foreground: #0a0a0a;
+  --muted: #333333;
+  --muted-foreground: #888888;
+  --accent: #00d9ff;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ff6b35;
+  --destructive-foreground: #0a0a0a;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #00d9ff;
+  --chart-1: #00d9ff;
+  --chart-2: #10b981;
+  --chart-3: #fbbf24;
+  --chart-4: #8b5cf6;
+  --chart-5: #ec4899;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #00d9ff;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #10b981;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #1a1a1a;
+  --sidebar-ring: #00d9ff;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3), 0 0 20px rgba(0, 217, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.2);
+  }
+}
+
+@keyframes scan-lines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes grid-animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    r: 6px;
+    filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.4));
+  }
+  50% {
+    r: 8px;
+    filter: drop-shadow(0 0 16px rgba(0, 217, 255, 0.8));
+  }
+}
+
+@keyframes connection-flow {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.scan-lines {
+  animation: scan-lines 8s linear infinite;
+}
+
+.float-up {
+  animation: float-up 3s ease-in-out infinite;
+}
+
+.grid-animate {
+  animation: grid-animate 20s linear infinite;
+}
+
+.node-pulse {
+  animation: node-pulse 2s ease-in-out infinite;
+}
+
+.connection-flow {
+  animation: connection-flow 6s linear infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 217, 255, 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes icon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(0, 217, 255, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.6));
+  }
+}
+
+@keyframes icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(0, 217, 255, 0.3));
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.6));
+  }
+}
+
+.icon-glow {
+  transition: filter 0.3s ease;
+}
+
+.icon-glow:hover {
+  animation: icon-glow 2s ease-in-out infinite;
+}
+
+.icon-rotate {
+  animation: icon-rotate 3s linear infinite;
+}
+
+.icon-pulse-active {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
